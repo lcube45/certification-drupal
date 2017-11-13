@@ -1,0 +1,19 @@
+certification.routing_basic:
+  route_name: certification.demo_routing_basic
+  title: 'Basic'
+  base_route: certification.routing_basic
+certification.routing_local:
+  route_name: certification.demo_routing_local
+  title: 'Local'
+  base_route: certification.routing_basic
+  weight: 100
+certification.routing_argument:
+  route_name: certification.demo_routing_argument
+  title: 'Argument'
+  base_route: certification.routing_basic
+  weight: 100
+certification.routing_upcast:
+  route_name: certification.demo_routing_upcast
+  title: 'Upcast'
+  base_route: certification.routing_basic
+  weight: 100

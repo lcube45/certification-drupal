@@ -1,0 +1,36 @@
+
+certification.demo_routing_basic:
+  path: '/certification/routing/basic'
+  defaults:
+    _controller: '\Drupal\certification\Controller\DemoRoutingController::basic'
+    _title: 'Basic route example'
+  requirements:
+    _permission: 'access content'
+
+certification.demo_routing_local:
+  path: '/certification/routing/local'
+  defaults:
+    _controller: '\Drupal\certification\Controller\DemoRoutingController::local'
+    _title: 'Local link menu route example'
+  requirements:
+    _permission: 'access content'
+
+certification.demo_routing_argument:
+  path: '/certification/routing/argument/{first}/{second}'
+  defaults:
+    _controller: '\Drupal\certification\Controller\DemoRoutingController::argument'
+    _title: 'Local link menu route example with arguments'
+    first: 10
+    second: 290
+  requirements:
+    _permission: 'access content'
+
+certification.demo_routing_upcast:
+  path: '/certification/routing/upcast/{user}'
+  defaults:
+    _controller: '\Drupal\certification\Controller\DemoRoutingController::upcast'
+    _title: 'Local link menu route example with upcasting parameter'
+    user: 1
+  requirements:
+    _permission: 'access content'
+    user: \d+

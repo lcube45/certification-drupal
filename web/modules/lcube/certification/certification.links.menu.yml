@@ -1,0 +1,6 @@
+certification.routing_basic:
+  title: 'Routing'
+  route_name: certification.demo_routing_basic
+  description: 'Exemple de lien de menu sur une route basique'
+  menu_name: main
+  expanded: TRUE

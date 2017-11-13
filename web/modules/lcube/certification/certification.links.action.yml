@@ -1,0 +1,5 @@
+certification.link_action:
+  route_name: certification.demo_routing_basic
+  title: 'Retour au départ'
+  appears_on:
+    - certification.demo_routing_local
