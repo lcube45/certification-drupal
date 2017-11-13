@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./.docker/apache-php/Dockerfile
+    environment:
+      XDEBUG_CONFIG: idekey=PHPSTORM remote_host=10.254.254.254
+    volumes:
+      - .:/var/www/html:cached
+    group_add:
+      - www-data
+    ports:
+      - 8080:80
+    expose:
+      - 80
+      - 9000
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  mysql-data:
