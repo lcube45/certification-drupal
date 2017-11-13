@@ -1,0 +1,5 @@
+name: certification
+type: module
+description: Module dev api examples
+core: 8.x
+package: lcube
