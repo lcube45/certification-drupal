@@ -34,3 +34,12 @@ certification.demo_routing_upcast:
   requirements:
     _permission: 'access content'
     user: \d+
+
+certification.demo_routing_form:
+  path: '/certification/routing/form'
+  defaults:
+    _form: '\Drupal\certification\Form\DefaultForm'
+    _title: 'Exemple routing formulaire'
+  requirements:
+    _access: 'TRUE'
+  

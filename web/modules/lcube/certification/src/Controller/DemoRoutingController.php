@@ -51,10 +51,16 @@ class DemoRoutingController extends ControllerBase {
    *   Return Hello string.
    */
   public function basic() {
+    /*
     return [
       '#type' => 'markup',
       '#markup' => $this->t('Exemple de route basique avec entrée de menu principal')
     ];
+    */
+
+    $form = \Drupal::formBuilder()->getForm('Drupal\certification\Form\DefaultForm');
+
+    return $form;
   }
 
   /**

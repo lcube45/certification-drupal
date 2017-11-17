@@ -17,3 +17,8 @@ certification.routing_upcast:
   title: 'Upcast'
   base_route: certification.routing_basic
   weight: 100
+certification.routing_form:
+  route_name: certification.demo_routing_form
+  title: 'Form'
+  base_route: certification.routing_basic
+  weight: 100
