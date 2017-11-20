@@ -1,0 +1,14 @@
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      css/global-basic.css: {}
+  js:
+    js/global-basic.js: {}
+mystyles:
+  version: 1.0
+  css:
+    theme:
+      css/mystyles-basic.css: {}
+    js:
+      js/mystyles-basic.js: {}

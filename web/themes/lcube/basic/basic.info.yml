@@ -1,0 +1,14 @@
+name: basic
+type: theme
+description: My demo theme
+package: lcube
+core: 8.x
+libraries:
+  - basic/global-styling
+  - basic/mystyles
+ckeditor_stylesheets:
+  - css/global-basic.css
+base theme: bartik
+
+regions:
+  content: Content
