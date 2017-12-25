@@ -1,0 +1,10 @@
+gfi_auth_token.default_controller_demo:
+  path: '/gfi_auth_token/demo'
+  options:
+    _auth: ['auth_token']
+    no_cache: 'TRUE'
+  defaults:
+    _controller: '\Drupal\gfi_auth_token\Controller\DefaultController::demo'
+    _title: 'tokenAuthDemo'
+  requirements:
+    _user_is_logged_in: 'TRUE'

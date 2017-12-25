@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains gfi_auth_token.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function gfi_auth_token_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gfi_auth_token module.
+    case 'help.page.gfi_auth_token':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gfi Authentication Token Provider') . '</p>';
+      return $output;
+
+    default:
+  }
+}

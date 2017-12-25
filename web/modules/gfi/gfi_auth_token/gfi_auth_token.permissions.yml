@@ -1,0 +1,19 @@
+add auth token entities:
+  title: 'Create new Auth token entities'
+
+administer auth token entities:
+  title: 'Administer Auth token entities'
+  description: 'Allow to access the administration form to configure Auth token entities.'
+  restrict access: true
+
+delete auth token entities:
+  title: 'Delete Auth token entities'
+
+edit auth token entities:
+  title: 'Edit Auth token entities'
+
+view published auth token entities:
+  title: 'View published Auth token entities'
+
+view unpublished auth token entities:
+  title: 'View unpublished Auth token entities'

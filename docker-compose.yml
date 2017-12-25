@@ -9,6 +9,7 @@ services:
       XDEBUG_CONFIG: idekey=PHPSTORM remote_host=10.254.254.254
     volumes:
       - .:/var/www/html:cached
+      - ./.docker/apache-php/include/my-php.ini:/usr/local/etc/php/conf.d/my-php.ini
     group_add:
       - www-data
     ports:

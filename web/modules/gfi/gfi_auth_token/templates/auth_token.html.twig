@@ -1,0 +1,22 @@
+{#
+/**
+ * @file auth_token.html.twig
+ * Default theme implementation to present Auth token data.
+ *
+ * This template is used when viewing Auth token pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_auth_token()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('auth_token') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

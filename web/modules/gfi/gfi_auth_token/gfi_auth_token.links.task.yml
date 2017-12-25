@@ -1,0 +1,22 @@
+# Auth token routing definition
+auth_token.settings_tab:
+  route_name: auth_token.settings
+  title: 'Settings'
+  base_route: auth_token.settings
+
+entity.auth_token.canonical:
+  route_name: entity.auth_token.canonical
+  base_route: entity.auth_token.canonical
+  title: 'View'
+
+entity.auth_token.edit_form:
+  route_name: entity.auth_token.edit_form
+  base_route: entity.auth_token.canonical
+  title: 'Edit'
+
+entity.auth_token.delete_form:
+  route_name:  entity.auth_token.delete_form
+  base_route:  entity.auth_token.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,14 @@
+
+# Auth token menu items definition
+entity.auth_token.collection:
+  title: 'Auth token list'
+  route_name: entity.auth_token.collection
+  description: 'List Auth token entities'
+  parent: system.admin_structure
+  weight: 100
+
+auth_token.admin.structure.settings:
+  title: Auth token settings
+  description: 'Configure Auth token entities'
+  route_name: auth_token.settings
+  parent: system.admin_structure
