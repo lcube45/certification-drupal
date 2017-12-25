@@ -1,0 +1,5 @@
+name: Cache
+type: module
+description: Cache expirements
+core: 8.x
+package: lcube

@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\gfi_auth_token\Controller;
+namespace Drupal\cache\Controller;
 
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Entity\EntityManager;
+use Drupal\Core\Session\AccountProxy;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class DefaultController.
@@ -14,24 +14,24 @@ use Drupal\Core\Entity\EntityManager;
 class DefaultController extends ControllerBase {
 
   /**
-   * Drupal\Core\Session\AccountProxy definition.
-   *
-   * @var \Drupal\Core\Session\AccountProxy
-   */
-  protected $currentUser;
-  /**
    * Drupal\Core\Entity\EntityManager definition.
    *
    * @var \Drupal\Core\Entity\EntityManager
    */
   protected $entityManager;
+  /**
+   * Drupal\Core\Session\AccountProxy definition.
+   *
+   * @var \Drupal\Core\Session\AccountProxy
+   */
+  protected $currentUser;
 
   /**
    * Constructs a new DefaultController object.
    */
-  public function __construct(AccountProxy $current_user, EntityManager $entity_manager) {
-    $this->currentUser = $current_user;
+  public function __construct(EntityManager $entity_manager, AccountProxy $current_user) {
     $this->entityManager = $entity_manager;
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -39,8 +39,8 @@ class DefaultController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('current_user'),
-      $container->get('entity.manager')
+      $container->get('entity.manager'),
+      $container->get('current_user')
     );
   }
 
@@ -52,14 +52,9 @@ class DefaultController extends ControllerBase {
    */
   public function demo() {
 
-    \Drupal::service('page_cache_kill_switch')->trigger();
-
-    $current_user = $this->currentUser->getAccountName();
-
     return [
       '#type' => 'markup',
-      '#markup' => 'yeah jjj : ' . $current_user,
-      '#cache' => ['max-age' => 0],
+      '#markup' => $this->t('Implement method: demo cool')
     ];
   }
 

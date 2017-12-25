@@ -1,0 +1,14 @@
+{
+  "name": "drupal/cache",
+  "type": "drupal-module",
+  "description": "Cache expirements",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/cache",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/cache",
+    "source": "http://cgit.drupalcode.org/cache"
+  },
+  "require": { }
+}
