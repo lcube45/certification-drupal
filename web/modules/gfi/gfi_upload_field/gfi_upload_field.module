@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains gfi_upload_field.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function gfi_upload_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gfi_upload_field module.
+    case 'help.page.gfi_upload_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gfi upload field') . '</p>';
+      return $output;
+
+    default:
+  }
+}

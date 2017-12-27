@@ -1,0 +1,14 @@
+{
+  "name": "drupal/gfi_upload_field",
+  "type": "drupal-module",
+  "description": "Gfi upload field",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/gfi_upload_field",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/gfi_upload_field",
+    "source": "http://cgit.drupalcode.org/gfi_upload_field"
+  },
+  "require": { }
+}

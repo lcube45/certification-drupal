@@ -1,0 +1,5 @@
+name: Gfi Upload Field
+type: module
+description: Gfi upload field
+core: 8.x
+package: Gfi
