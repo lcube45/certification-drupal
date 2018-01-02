@@ -53,8 +53,6 @@ class AuthTokenProvider implements AuthenticationProviderInterface {
    *   request, FALSE otherwise.
    */
   public function applies(Request $request) {
-    // If you return TRUE and the method Authentication logic fails,
-    // you will get out from Drupal navigation if you are logged in.
 
     $token = $request->query->get('token');
 
@@ -71,23 +69,24 @@ class AuthTokenProvider implements AuthenticationProviderInterface {
   public function authenticate(Request $request) {
 
     $token = $request->query->get('token');
-    $session = $request->getSession();
 
-    if($this->isCorrectToken($token)) {
-      return $this->entityTypeManager->getStorage('user')->load(3);
+    if($user_id = $this->isCorrectToken($token)) {
+      return $this->entityTypeManager->getStorage('user')->load($user_id);
     } else {
       throw new AccessDeniedHttpException();
     }
   }
 
   protected function isCorrectToken($token) {
-    $token_ids = [];
+
     $query = \Drupal::entityQuery('auth_token')
-      ->condition('token', $token, '=');
+      ->condition('token', $token, '=')
+      ->condition('status', TRUE, '=');
     $token_ids = $query->execute();
 
     if(count($token_ids) === 1) {
-      return true;
+      $token = $this->entityTypeManager->getStorage('auth_token')->load(current($token_ids));
+      return $token->get('user_id')->target_id;
     } else {
       return false;
     }

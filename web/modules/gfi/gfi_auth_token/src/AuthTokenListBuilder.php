@@ -19,8 +19,8 @@ class AuthTokenListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['token'] = $this->t('Token');
-    $header['user'] = $this->t('Granted user');
-    $header['resource'] = $this->t('Granted resource');
+    $header['user'] = $this->t('Granted user id');
+    $header['resource'] = $this->t('Granted resource id');
 
     return $header + parent::buildHeader();
   }

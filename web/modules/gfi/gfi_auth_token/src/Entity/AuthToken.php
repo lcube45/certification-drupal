@@ -128,10 +128,6 @@ class AuthToken extends ContentEntityBase implements AuthTokenInterface {
     return $this;
   }
 
-  public function token() {
-
-  }
-
   /**
    * {@inheritdoc}
    */

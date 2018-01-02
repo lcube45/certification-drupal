@@ -52,13 +52,11 @@ class DefaultController extends ControllerBase {
    */
   public function demo() {
 
-    \Drupal::service('page_cache_kill_switch')->trigger();
-
     $current_user = $this->currentUser->getAccountName();
 
     return [
       '#type' => 'markup',
-      '#markup' => 'yeah jjj : ' . $current_user,
+      '#markup' => 'Utilisateur identifié : ' . $current_user,
       '#cache' => ['max-age' => 0],
     ];
   }
