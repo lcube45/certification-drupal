@@ -23,14 +23,28 @@ class FileUploadWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element['filename'] = $element + [
-      '#type' => 'textfield',
+
+    $element['filename'] = [
+      '#type' => 'file',
       '#title' => 'filename',
-      '#default_value' => isset($items[$delta]->filename) ? $items[$delta]->filename : NULL,
       '#size' => 60,
-      '#maxlength' => 128,
+      '#multiple' => TRUE,
     ];
 
+    $element['test'] = [
+        '#type' => 'textfield',
+        '#title' => 'filename',
+        '#size' => 60,
+      ];
+
     return $element;
+  }
+
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    return $values;
+  }
+
+  public static function value($element, $input = FALSE, FormStateInterface $form_state) {
+    return 'cool';
   }
 }
